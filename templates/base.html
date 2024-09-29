@@ -75,7 +75,7 @@
                           </a>
                       </li>
                        <li class=" sidebar-layout">
-                          <a href="../app/user-profile.html" class="svg-icon">
+                          <a  type="button" class="btn mt-2 svg-icon" data-toggle="modal" data-target=".bd-example-modal-sm">
                               <i class="">
                                   <svg class="svg-icon" id="iq-user-1-1" xmlns="http://www.w3.org/2000/svg"
                                       fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -280,12 +280,6 @@
                                           </svg>
                                           <a href="../app/user-privacy-setting.html">Privacy Settings</a>
                                       </li>
-                                      <li class="dropdown-item  d-flex svg-icon border-top">
-                                          <svg class="svg-icon mr-0 text-secondary" id="h-05-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                          </svg>
-                                          <a href="../backend/auth-sign-in.html">Logout</a>
-                                      </li>
                                   </ul>
                               </li>
                           </ul>
@@ -323,6 +317,37 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+ <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h5 class="modal-title">Logout Confirmation</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                                 </button>
+                              </div>
+                              <div class="modal-body">
+                                 <p>Rostan ham chiqmoqchimisiz</p>
+                              </div>
+                              <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                 <a href="{% url 'sign-out' %}" type="button" class="btn btn-primary"> Ha</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+
+
+
+
+
     </footer>    <!-- Backend Bundle JavaScript -->
     <script src="{% static  'assets/js/backend-bundle.min.js' %}"></script>
     <!-- Chart Custom JavaScript -->

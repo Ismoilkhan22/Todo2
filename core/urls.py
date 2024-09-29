@@ -8,6 +8,7 @@ urlpatterns = [
     path('login/', sign_in, name='sign-in'),
     path('regis/', sign_up, name='sign-up'),
     path('logout/', sign_out, name='sign-out'),
-    path('check/', step_two, name='otp')
+    path('check/', otp, name='otp'),
+    path('resent/', re_otp, name='re-otp')
 
 ]

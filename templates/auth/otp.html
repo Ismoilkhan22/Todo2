@@ -21,6 +21,10 @@
           </div>
     </div>
     <!-- loader END -->
+
+
+
+
     
       <div class="wrapper">
       <section class="login-content">
@@ -37,7 +41,10 @@
                               </div>
                               <div class="text-center">
                                  <h2 class="mb-2">Check your login </h2>
-                                 <p>Emailingiz {{email}} ga yuborilgan kodni kiriting</p>
+                                  <p>Emailingiz {{email}} ga yuborilgan kodni kiriting ({{ request.session.code }})</p>
+                                  {% if error %}
+                                 <p class="text-danger">{{ error }} </p>
+                                  {% endif %}
                               </div>
                               <form method="post">
                                   {% csrf_token %}
@@ -45,11 +52,16 @@
                                     <div class="col-lg-12">
                                        <div class="form-group">
                                           <label>One time password </label>
-                                          <input class="form-control" type="text" placeholder="123456">
+                                          <input class="form-control" name="code" type="text" placeholder="123456">
                                        </div>
                                     </div>
                                  </div>
                                  <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                  {% if error %}
+                                   <div class="col-lg-12 mt-3">
+                                         <p class="mb-0 text-center"> <a href="{% url 're-otp' %}">Boshqattan yuborish</a></p>
+                                   </div>
+                                  {% endif %}
                               </form>
                            </div>
                         </div>
@@ -60,6 +72,16 @@
          </div>
       </section>
       </div>
+
+
+
+
+
+
+
+
+
+
     
     <!-- Backend Bundle JavaScript -->
     <script src="{% static  'assets//js/backend-bundle.min.js' %}"></script>
@@ -80,7 +102,7 @@
     
     <!-- Vectoe Map JavaScript -->
     <script src="{% static  'assets//js/vector-map-custom.js' %}"></script>
-    
+
     <!-- Chart Custom JavaScript -->
     <script src="{% static  'assets//js/chart-custom.js' %}"></script>
     <script src="{% static  'assets//js/charts/01.js' %}"></script>
