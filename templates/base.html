@@ -6,7 +6,7 @@
       {% load static %}
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Datum | CRM Admin Dashboard Template</title>
+      <title> {% block title %} {% endblock%} </title>
 
       <!-- Favicon -->
       <link rel="shortcut icon" href="{% static  'assets/images/favicon.ico' %}" />
@@ -291,8 +291,13 @@
       <div class="content-page">
       <div class="container-fluid">
          <div class="row">
-            <div class="col-lg-12">
-               Here Add Your HTML Content.....
+
+
+
+                {% block content %}
+                {% endblock%}
+
+
             </div>
          </div>
       </div>

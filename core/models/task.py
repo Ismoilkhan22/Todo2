@@ -2,7 +2,7 @@ from django.db import models
 from .users import User
 
 
-class TaskItem(models.Model):
+class Task(models.Model):
     STATUS_CHOICES = (
         ('pending', 'Pending'),
         ('in_progress', 'In Progress'),

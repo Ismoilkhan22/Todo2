@@ -5,4 +5,4 @@ from django.shortcuts import render
 @login_required(login_url='sign-in')
 def index(request):
     ctx = {}
-    return render(request, "base.html", ctx)
+    return render(request, "pages/index.html", ctx)
